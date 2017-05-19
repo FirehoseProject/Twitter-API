@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 def show
-  bearer_token= "AAAAAAAAAAAAAAAAAAAAAKz30QAAAAAAQWRTwnPvMdC8xF9hGbVhu19W9II%3DoEfIKbzjR9RuwyDRV0rwFx3yDQPnnVtiwOybvOlDDOyFErpDlO";
+  bearer_token= Twitter.generate_bearer_token
 
     api_auth_header = {"Authorization" => "Bearer #{bearer_token}"}
 url = "https://api.twitter.com/1.1/users/show.json?screen_name=#{params[:id]}"
